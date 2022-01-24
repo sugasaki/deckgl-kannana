@@ -1,10 +1,13 @@
-import { MVTLayer } from "deck.gl";
+import { MVTLayer } from 'deck.gl';
+
+const buildingDataTitleUrl =
+  'https://indigo-lab.github.io/plateau-tokyo23ku-building-mvt-2020/{z}/{x}/{y}.pbf';
 
 export const useRenderBuilding = (tileURL) => {
   //建物データレイヤの基本設定
   const buildingLayerBase = {
-    id: "mvFIll",
-    data: `https://indigo-lab.github.io/plateau-tokyo23ku-building-mvt-2020/{z}/{x}/{y}.pbf`,
+    id: 'mvFIll',
+    data: buildingDataTitleUrl,
     pickable: false,
     stroked: false,
     filled: true,
@@ -14,7 +17,7 @@ export const useRenderBuilding = (tileURL) => {
     lineWidthScale: 20,
     lineWidthMinPixels: 2,
     getRadius: 100,
-    getLineWidth: 1
+    getLineWidth: 1,
   };
 
   //ダークモード用の建物データ
@@ -26,7 +29,7 @@ export const useRenderBuilding = (tileURL) => {
     // getLineColor: [10, 10, 10, 180],
     getLineColor: [0, 100, 255, 80],
     // getLineColor: [255, 0, 0, 60],
-    getElevation: (d) => d.properties.measuredHeight
+    getElevation: (d) => d.properties.measuredHeight,
   });
 
   // ライトモード用の建物データ
@@ -34,7 +37,7 @@ export const useRenderBuilding = (tileURL) => {
     ...buildingLayerBase,
     getFillColor: [160, 160, 160, 256],
     getLineColor: [10, 10, 10, 256],
-    getElevation: (d) => d.properties.measuredHeight
+    getElevation: (d) => d.properties.measuredHeight,
   });
 
   return { darkBuildingLayer, lightBuildingLayer };
