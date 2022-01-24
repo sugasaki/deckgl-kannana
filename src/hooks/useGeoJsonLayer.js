@@ -1,13 +1,14 @@
-import { GeoJsonLayer } from "@deck.gl/layers";
+import { GeoJsonLayer } from '@deck.gl/layers';
 
 //データ取得先
 // public配下に置いてある
-// const geojson = "./track.geojson";
-const geojson = "./kannana.geojson";
+// const geojson = "../data/track.geojson";
+import geojson from '../data/kannana.geojson';
+// import geojson from '../data/hakone.geojson';
 
 export const useGeoJsonLayer = () => {
   const lineLayer = new GeoJsonLayer({
-    id: "geojson-layer",
+    id: 'geojson-layer',
     data: geojson,
     pickable: true,
     stroked: false,
@@ -19,7 +20,7 @@ export const useGeoJsonLayer = () => {
     getLineColor: [255, 0, 0, 200],
     getRadius: 100,
     getLineWidth: 1,
-    getElevation: 30
+    getElevation: 30,
   });
 
   return { lineLayer };

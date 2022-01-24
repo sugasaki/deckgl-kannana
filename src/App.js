@@ -3,10 +3,10 @@ import DeckGL from "@deck.gl/react";
 import { Switch, Typography } from "antd";
 import "antd/dist/antd.css";
 
-import { useRenderBuilding } from "./useRenderBuilding";
-import { useOpenstreetmap } from "./useOpenstreetmap";
-import { useDeckGlEffect } from "./useDeckGlEffect";
-import { useGeoJsonLayer } from "./useGeoJsonLayer";
+import { useRenderBuilding } from "./hooks/useRenderBuilding";
+import { useOpenstreetmap } from "./hooks/useOpenstreetmap";
+import { useDeckGlEffect } from "./hooks/useDeckGlEffect";
+import { useGeoJsonLayer } from "./hooks/useGeoJsonLayer";
 // import { useScatterplotLayer } from "./useScatterplotLayer";
 
 const { Title } = Typography;
